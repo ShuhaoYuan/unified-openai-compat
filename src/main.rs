@@ -37,7 +37,7 @@ async fn main() -> std::io::Result<()> {
             .route("/v1/models", web::get().to(handlers::models_endpoint))
             .route("/v1/chat/completions", web::post().to(handlers::chat_completions))
     })
-    .bind("127.0.0.1:8080")?
+    .bind("0.0.0.0:8080")?
     .run()
     .await
 }
